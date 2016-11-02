@@ -3,7 +3,7 @@
     package="com.nostra13.universalimageloader.test" >
 
     <uses-sdk
-        android:minSdkVersion="5"
+        android:minSdkVersion="11"
         android:targetSdkVersion="22" />
 
     <instrumentation

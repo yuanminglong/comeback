@@ -1,20 +1,14 @@
-package com.yuna.comeback;
+package com.yuna.comeback.view;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.PersistableBundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
+import com.yuna.comeback.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -32,7 +26,7 @@ public class IndexADActivity extends Activity {
                 mTimes--;
                 mTime.postDelayed(mSetOverTime,1000);
             }else {
-                enterApp();
+                enterApp(null);
             }
         }
     };
@@ -51,13 +45,6 @@ public class IndexADActivity extends Activity {
         mADView = (ImageView) findViewById(R.id.iv_index_ad);
         mADView.setImageResource(R.mipmap.splash);
         mTime = (TextView) findViewById(R.id.tv_over_time);
-        mTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mTime.removeCallbacks(mSetOverTime);
-                enterApp();
-            }
-        });
     }
 
     @Override
@@ -66,7 +53,7 @@ public class IndexADActivity extends Activity {
         mTime.post(mSetOverTime);
     }
 
-    private void enterApp(){
+    protected void enterApp(View view){
         startActivity(new Intent(getApplicationContext(),MainActivity.class));
         finish();
     }

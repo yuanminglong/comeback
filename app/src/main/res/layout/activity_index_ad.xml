@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000099cc"
-    tools:context="com.yuna.comeback.IndexADActivity">
+    tools:context="com.yuna.comeback.view.IndexADActivity">
     <ImageView
         android:scaleType="fitXY"
         android:id="@+id/iv_index_ad"
@@ -17,6 +17,10 @@
         android:layout_height="match_parent"
         >
         <TextView
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:onClick="enterApp"
             android:padding="3dip"
             android:id="@+id/tv_over_time"
             android:background="@drawable/bg_index_over_time"

@@ -7,7 +7,4 @@ package com.yuna.comeback.hhtp;
 public class HttpManager {
 
 
-
-
-
 }

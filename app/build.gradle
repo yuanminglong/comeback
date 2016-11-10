@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'com.android.databinding'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 22
     buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.yuna.comeback"
-        minSdkVersion 7
-        targetSdkVersion 25
+        minSdkVersion 11
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -17,8 +18,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':library')
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'
+   // compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile files('src/main/libs/gson-2.2.2.jar')
 }

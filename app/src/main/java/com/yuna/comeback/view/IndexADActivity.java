@@ -5,11 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yuna.comeback.R;
 import com.yuna.comeback.app.BaseActivity;
 import com.yuna.comeback.presnter.ipresnter.IIndesADPresnter;
@@ -106,5 +108,17 @@ public class IndexADActivity extends BaseActivity implements IIndexADView,View.O
     @Override
     public void setADreource(Uri uri) {
         mADView.setImageURI(uri);
+    }
+
+    @Override
+    public void setADreource(String url) {
+        if (TextUtils.isEmpty(url))
+            return;
+        ImageLoader.getInstance().displayImage(url,mADView);
+    }
+
+    @Override
+    public ImageView getADView() {
+        return mADView;
     }
 }
